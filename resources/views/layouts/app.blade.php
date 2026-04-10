@@ -9,7 +9,7 @@
 
     {{-- Open Graph / partage réseaux sociaux --}}
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://insidecommercial.net">
+    <meta property="og:url" content="https://insidecommercial.fr">
     <meta property="og:title" content="INSIDE COMMERCIAL SARL — Matériaux de gypse de qualité supérieure">
     <meta property="og:description" content="Découvrez nos solutions professionnelles en gypse et plâtre pour la construction au Cameroun et en Afrique Centrale. Partenaire exclusif d'AL ALAMIA, leader égyptien du secteur depuis 2005.">
     <meta property="og:image" content="{{ asset('logo.png') }}">

@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://insidecommercial.net'),
+    'url' => env('APP_URL', 'https://insidecommercial.fr'),
 
     'asset_url' => env('ASSET_URL', '/'),
 
