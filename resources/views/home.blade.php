@@ -207,55 +207,50 @@
                 'name' => 'MEGA GYPSE',
                 'category' => 'finition',
                 'category_label' => 'Finition',
-                'letter' => 'M',
+                'image' => 'assets/products/mega-gypse.png',
                 'tagline' => 'Plâtre en couche mince',
                 'description' => 'Produit à base de gypse destiné à être appliqué en couches minces (jusqu\'à 4 mm) sur des surfaces en béton. Convient pour les bâtiments, murs et plafonds.',
                 'features' => ['Surface lisse nettoyable', 'Finition sans peinture', 'Excellente maniabilité', 'Durable'],
-                'color' => 'blue',
             ],
             [
                 'slug' => 'crochet',
                 'name' => 'CROCHET (Hook)',
                 'category' => 'finition',
                 'category_label' => 'Finition',
-                'letter' => 'C',
+                'image' => 'assets/products/crochet.png',
                 'tagline' => 'Pâte de plâtre haute qualité',
                 'description' => 'Poudre blanche de haute qualité prête à l\'emploi. Haute brillance, forte adhérence, aucune fissure. Convient aux surfaces intérieures et extérieures.',
                 'features' => ['Excellente adhérence', 'Aucun retrait ni fissure', 'Haute brillance', 'Sûr et inodore'],
-                'color' => 'indigo',
             ],
             [
                 'slug' => 'goharet-sinai-bronze',
                 'name' => 'GOHARET SINAI BRONZE',
                 'category' => 'construction',
                 'category_label' => 'Construction',
-                'letter' => 'G',
+                'image' => 'assets/products/goharet-sinai-bronze.png',
                 'tagline' => 'Plâtre à séchage rapide',
                 'description' => 'Plâtre blanc à séchage rapide (prise initiale 5–8 min). Idéal pour les chantiers exigeant un rythme soutenu. Excellent pour les éléments architecturaux décoratifs.',
                 'features' => ['Prise initiale : 5–8 min', 'Prise finale : 9–15 min', 'Finition polie impeccable', 'Moulage décoratif'],
-                'color' => 'amber',
             ],
             [
                 'slug' => 'goharet-sinai-saphir',
                 'name' => 'GOHARET SINAI SAPHIR',
                 'category' => 'construction',
                 'category_label' => 'Construction',
-                'letter' => 'G',
+                'image' => 'assets/products/goharet-sinai-saphir.png',
                 'tagline' => 'Plâtre à séchage lent',
                 'description' => 'Plâtre blanc à séchage lent (prise initiale 12–15 min). Idéal pour couvrir de grandes surfaces. Temps de prise personnalisable selon vos besoins.',
                 'features' => ['Prise initiale : 12–15 min', 'Prise finale : 23–29 min', 'Grandes surfaces', 'Temps personnalisable'],
-                'color' => 'sky',
             ],
             [
                 'slug' => 'marteau',
                 'name' => 'MARTEAU (Hammer)',
                 'category' => 'mortier',
                 'category_label' => 'Mortier',
-                'letter' => 'M',
+                'image' => 'assets/products/hammer.png',
                 'tagline' => 'Mortier de plâtre prêt à l\'emploi',
                 'description' => 'Mortier de plâtre prêt sur briques sans chape. Surface blanche et lisse jusqu\'à 8 cm/couche. 50% plus léger que les alternatives ciment. Résistant à l\'humidité.',
                 'features' => ['50% plus léger que ciment', 'Résistant humidité & feu', 'Isolation thermique & acoustique', 'Jusqu\'à 8 cm/couche'],
-                'color' => 'orange',
             ],
         ];
         @endphp
@@ -263,21 +258,26 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach($products as $product)
             <div data-category="{{ $product['category'] }}"
-                 class="group bg-slate-50 hover:bg-white rounded-2xl border border-slate-100 hover:border-blue-100 hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
+                 class="product-card group bg-slate-50 hover:bg-white rounded-2xl border border-slate-100 hover:border-blue-100 hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
 
-                {{-- Card header --}}
-                <div class="p-6 pb-4">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center">
-                            <span class="text-blue-700 font-bold text-xl">{{ $product['letter'] }}</span>
+                {{-- Product image --}}
+                <div class="bg-white flex items-center justify-center px-10 pt-8 pb-4 overflow-hidden">
+                    <img src="{{ asset($product['image']) }}"
+                         alt="{{ $product['name'] }}"
+                         class="product-img h-44 w-auto object-contain drop-shadow-md">
+                </div>
+
+                {{-- Card body --}}
+                <div class="px-6 pb-4">
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-lg leading-tight">{{ $product['name'] }}</h3>
+                            <p class="text-blue-600 text-xs font-semibold mt-0.5">{{ $product['tagline'] }}</p>
                         </div>
-                        <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase tracking-wide">
+                        <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase tracking-wide flex-shrink-0 ml-2">
                             {{ $product['category_label'] }}
                         </span>
                     </div>
-
-                    <h3 class="font-bold text-slate-900 text-lg mb-1">{{ $product['name'] }}</h3>
-                    <p class="text-blue-600 text-xs font-semibold mb-3">{{ $product['tagline'] }}</p>
                     <p class="text-slate-500 text-sm leading-relaxed">{{ $product['description'] }}</p>
                 </div>
 
@@ -495,8 +495,8 @@
                     [
                         'icon' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>',
                         'label' => 'Téléphone',
-                        'value' => '+237 000 00 00 00',
-                        'href' => 'tel:+237000000000',
+                        'value' => '(+237) 622 326 872',
+                        'href' => 'tel:+237622326872',
                     ],
                     [
                         'icon' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>',
@@ -529,15 +529,18 @@
                 </div>
                 @endforeach
 
-                {{-- Map placeholder --}}
-                <div class="mt-6 bg-slate-50 rounded-2xl border border-slate-100 h-52 flex items-center justify-center">
-                    <div class="text-center text-slate-400">
-                        <svg class="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                        </svg>
-                        <p class="text-xs font-medium">Carte de localisation</p>
-                        <p class="text-xs mt-1">Yaoundé, Cameroun</p>
-                    </div>
+                {{-- Google Maps --}}
+                <div class="mt-6 rounded-2xl overflow-hidden border border-slate-100 shadow-sm h-52">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127675.11504394754!2d11.438099149999999!3d3.8689867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf7a309a7977%3A0x7f614b5c1a3f3c73!2sYaound%C3%A9%2C%20Cameroun!5e0!3m2!1sfr!2scm!4v1712650000000!5m2!1sfr!2scm"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localisation INSIDE COMMERCIAL SARL — Yaoundé, Cameroun">
+                    </iframe>
                 </div>
             </div>
 

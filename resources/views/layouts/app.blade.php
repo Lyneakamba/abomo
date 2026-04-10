@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="INSIDE COMMERCIAL SARL — Votre partenaire en matériaux de gypse et solutions de construction au Cameroun et en Afrique Centrale.">
     <title>@yield('title', 'INSIDE COMMERCIAL SARL — Matériaux de construction & Gypse')</title>
+    <link rel="icon" type="image/png" href="{{ asset('logo_simple.png') }}">
+
+    {{-- Open Graph / partage réseaux sociaux --}}
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://insidecommercial.net">
+    <meta property="og:title" content="INSIDE COMMERCIAL SARL — Matériaux de gypse de qualité supérieure">
+    <meta property="og:description" content="Découvrez nos solutions professionnelles en gypse et plâtre pour la construction au Cameroun et en Afrique Centrale. Partenaire exclusif d'AL ALAMIA, leader égyptien du secteur depuis 2005.">
+    <meta property="og:image" content="{{ asset('logo.png') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="INSIDE COMMERCIAL SARL">
+
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="INSIDE COMMERCIAL SARL — Matériaux de gypse de qualité supérieure">
+    <meta name="twitter:description" content="Découvrez nos solutions professionnelles en gypse et plâtre pour la construction au Cameroun et en Afrique Centrale. Partenaire exclusif d'AL ALAMIA, leader égyptien du secteur depuis 2005.">
+    <meta name="twitter:image" content="{{ asset('logo.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">

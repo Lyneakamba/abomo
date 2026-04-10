@@ -50,7 +50,7 @@
                 <h4 class="text-white font-semibold text-sm uppercase tracking-widest mb-5">Contact</h4>
                 <ul class="space-y-3">
                     <li class="text-slate-400 text-sm">Yaoundé, Cameroun</li>
-                    <li><a href="tel:+237000000000" class="text-slate-400 hover:text-white text-sm transition-colors">+237 000 00 00 00</a></li>
+                    <li><a href="tel:+237622326872" class="text-slate-400 hover:text-white text-sm transition-colors">(+237) 622 326 872</a></li>
                     <li><a href="mailto:contact@insidecommercial.cm" class="text-slate-400 hover:text-white text-sm transition-colors">contact@insidecommercial.cm</a></li>
                 </ul>
 

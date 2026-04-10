@@ -8,6 +8,16 @@
   }
 }
 
+/* Zoom produit au survol */
+.product-card .product-img {
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+.product-card:hover .product-img {
+    transform: scale(1.25);
+    filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.2));
+    cursor: zoom-in;
+}
+
 @layer components {
   .btn-primary {
     @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-200;
